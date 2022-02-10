@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<SplitPane dividerPositions="0.2447236180904523" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.java.UcitelController">
+  <items>
+      <AnchorPane prefHeight="127.0" prefWidth="598.0">
+         <children>
+            <AnchorPane layoutX="-4.0" layoutY="-1.0" maxHeight="300.0" maxWidth="297.0" prefHeight="95.0" prefWidth="278.0">
+               <children>
+                  <Label layoutX="142.0" layoutY="25.0" text="Učiteľ" textFill="#a43a3a" AnchorPane.rightAnchor="70.79999999999998" />
+                  <ImageView fitHeight="72.0" fitWidth="62.0" layoutX="61.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" smooth="false" AnchorPane.rightAnchor="156.5872520446777">
+                     <image>
+                        <Image url="@../img/LOGO_FINAL.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton buttonType="RAISED" layoutX="165.0" layoutY="48.0" onAction="#logout" style="-fx-background-color: #a43a3a;" text="Odhlásiť" textFill="IVORY" AnchorPane.rightAnchor="51.79999999999998" />
+               </children>
+            </AnchorPane>
+            <JFXDatePicker fx:id="sysDatum" defaultColor="#a43a3a" layoutX="345.0" layoutY="33.0" promptText="8.3.2019" />
+         </children>
+      </AnchorPane>
+      <TabPane id="tabpane" prefHeight="275.0" prefWidth="598.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab id="tab-header-background" text="Trieda">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="triedaTableView" prefHeight="259.0" prefWidth="598.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="menoTC" prefWidth="75.0" text="Meno" />
+                            <TableColumn fx:id="priezviskoTC" prefWidth="95.0" text="Priezvisko" />
+                              <TableColumn fx:id="rodicTC" text="Rodic" />
+                              <TableColumn fx:id="pritomnostTC" prefWidth="347.0" text="Pritomnost" />
+                          </columns>
+                           <contextMenu>
+                              <ContextMenu onAction="#vymeskanieDna">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" text="Chybanie" />
+                                </items>
+                              </ContextMenu>
+                           </contextMenu>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab id="tab" text="Vymeškané hodiny">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="252.0" prefWidth="594.0">
+                     <children>
+                        <TableView fx:id="hodinyTableView" layoutY="2.0" prefHeight="256.0" prefWidth="598.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0">
+                          <columns>
+                            <TableColumn fx:id="datumVC" prefWidth="198.0" text="Dátum" />
+                            <TableColumn fx:id="menoVC" prefWidth="190.0" text="Meno" />
+                              <TableColumn fx:id="priezviskoVC" prefWidth="209.0" text="Priezvisko" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab id="tab" text="Ospravedlnenky">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="ospravedlnenkyTableView" prefHeight="256.0" prefWidth="598.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                              <TableColumn fx:id="ziakOC" prefWidth="189.0" text="Žiak" />
+                            <TableColumn fx:id="textOC" prefWidth="204.0" text="Text" />
+                            <TableColumn fx:id="datumOC" prefWidth="279.0" text="Dátum" />
+                          </columns>
+                           <contextMenu>
+                              <ContextMenu>
+                                <items>
+                                    <MenuItem mnemonicParsing="false" onAction="#ospravedlnDen" text="Ospravedlnenie" />
+                                </items>
+                              </ContextMenu>
+                           </contextMenu>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+  </items>
+</SplitPane>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.36454849498327757" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.java.ZiakController">
+  <items>
+      <AnchorPane prefHeight="398.0" prefWidth="245.0">
+         <children>
+            <AnchorPane layoutX="-1.0" maxHeight="300.0" maxWidth="235.0" prefHeight="98.0" prefWidth="215.0">
+               <children>
+                  <Label layoutX="142.0" layoutY="25.0" text="Žiak" textFill="#a43a3a" AnchorPane.rightAnchor="70.79999999999998" />
+                  <ImageView fitHeight="62.0" fitWidth="73.0" layoutX="25.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" smooth="false" AnchorPane.rightAnchor="137.8334648132324">
+                     <image>
+                        <Image url="@../img/LOGO_FINAL.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton buttonType="RAISED" layoutX="88.0" layoutY="53.0" onAction="#logout" style="-fx-background-color: #a43a3a;" text="Odhlásiť" textFill="IVORY" AnchorPane.rightAnchor="50.4" />
+               </children>
+            </AnchorPane>
+            <JFXDatePicker fx:id="datePicker" defaultColor="#a43a3a" layoutX="21.0" layoutY="107.0" promptText="8.3.2019" />
+            <JFXToggleButton fx:id="toggle" layoutX="15.0" layoutY="154.0" text="Neprítomný/Prítomný" textFill="#a43a3a" toggleColor="#a43a3a" toggleLineColor="#999999" unToggleColor="#a43a3a" />
+            <JFXButton layoutX="68.0" layoutY="233.0" onAction="#potvrdStav" prefHeight="26.0" prefWidth="69.0" style="-fx-background-color: #a43a3a;" text="Potvrď" textFill="IVORY" />
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="401.0" prefWidth="419.0">
+         <children>
+            <Label alignment="CENTER" layoutY="-2.0" prefHeight="58.0" prefWidth="378.0" text="Dochádzka žiaka" textFill="#a43a3a" AnchorPane.bottomAnchor="342.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-2.0">
+               <font>
+                  <Font name="Calibri Light" size="22.0" />
+               </font>
+            </Label>
+            <TableView fx:id="dochadzkaTableView" layoutY="56.0" prefHeight="347.0" prefWidth="364.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="56.0">
+              <columns>
+                <TableColumn fx:id="datumZ" prefWidth="178.0" text="Dátum" />
+                <TableColumn fx:id="pritomnostZ" minWidth="3.0" prefWidth="185.0" text="Prítomnosť" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+  </items>
+</SplitPane>

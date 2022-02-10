@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1171.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.java.AdminController">
+   <children>
+      <Label alignment="CENTER" layoutY="24.0" prefHeight="47.0" prefWidth="1216.0" text="Databáza údajov" textAlignment="CENTER" textFill="#a43a3a" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <font>
+            <Font name="Calibri Light" size="23.0" />
+         </font>
+      </Label>
+      <AnchorPane maxHeight="300.0" maxWidth="235.0" prefHeight="94.0" prefWidth="235.0">
+         <children>
+            <Label layoutX="82.0" layoutY="25.0" text="Administrátor" textFill="#a43a3a" AnchorPane.rightAnchor="45.2" />
+            <ImageView fitHeight="62.0" fitWidth="73.0" layoutX="31.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" smooth="false" AnchorPane.rightAnchor="151.8334648132324">
+               <image>
+                  <Image url="@../img/LOGO_FINAL.png" />
+               </image>
+            </ImageView>
+            <JFXButton buttonType="RAISED" layoutX="88.0" layoutY="53.0" onAction="#Logout" style="-fx-background-color: #a43a3a;" text="Odhlásiť" textFill="IVORY" AnchorPane.rightAnchor="50.4" />
+         </children>
+      </AnchorPane>
+      <TabPane layoutY="94.0" prefHeight="610.0" prefWidth="1171.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Ziaci">
+               <content>
+                  <SplitPane dividerPositions="0.20848056537102475" prefHeight="160.0" prefWidth="200.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <Label layoutX="25.0" layoutY="41.0" text="Meno:" textFill="#a43a3a" />
+                              <TextField fx:id="menoZField" layoutX="88.0" layoutY="37.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="137.0" promptText="Meno" />
+                              <Label layoutX="16.0" layoutY="80.0" text="Priezvisko" textFill="#a43a3a" />
+                              <TextField fx:id="priezviskoZField" layoutX="88.0" layoutY="75.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="137.0" promptText="Priezvisko" />
+                              <Label layoutX="16.0" layoutY="118.0" text="Username" textFill="#a43a3a" />
+                              <TextField fx:id="usernameZField" layoutX="88.0" layoutY="113.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="137.0" promptText="Username" />
+                              <Label layoutX="27.0" layoutY="159.0" text="Heslo:" textFill="#a43a3a" />
+                              <PasswordField fx:id="hesloZField" layoutX="88.0" layoutY="154.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="138.0" promptText="Heslo" />
+                              <Label layoutX="25.0" layoutY="196.0" text="UserID:" textFill="#a43a3a" />
+                              <TextField fx:id="userIDZField" layoutX="88.0" layoutY="191.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="137.0" promptText="UserID" />
+                              <Label layoutX="29.0" layoutY="235.0" text="Rodic:" textFill="#a43a3a" />
+                              <TextField fx:id="rodicZField" layoutX="88.0" layoutY="230.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="137.0" promptText="Rodic" />
+                              <Label layoutX="27.0" layoutY="271.0" text="Trieda:" textFill="#a43a3a" />
+                              <TextField fx:id="triedaZField" layoutX="88.0" layoutY="266.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="137.0" promptText="Trieda" />
+                              <Label layoutX="29.0" layoutY="314.0" text="Ucitel:" textFill="#a43a3a" />
+                              <TextField fx:id="ucitelZField" layoutX="88.0" layoutY="309.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="137.0" promptText="Ucitel" />
+                              <JFXButton fx:id="addZButton" buttonType="RAISED" layoutX="13.0" layoutY="464.0" onAction="#AddZiak" prefHeight="25.0" prefWidth="96.0" style="-fx-background-color: #a43a3a;" text="Pridať" textFill="IVORY" />
+                              <JFXButton fx:id="updateZButton" buttonType="RAISED" layoutX="130.0" layoutY="464.0" onAction="#UpdateZiak" prefHeight="25.0" prefWidth="96.0" style="-fx-background-color: #a43a3a;" text="Update" textFill="IVORY" />
+                           </children></AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="525.0" prefWidth="576.0">
+                           <children>
+                              <TableView fx:id="ziaciTableView" layoutX="-1.0" prefHeight="618.0" prefWidth="960.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                  <TableColumn fx:id="menoZC" prefWidth="75.0" text="Meno" />
+                                  <TableColumn fx:id="priezviskoZC" prefWidth="75.0" text="Priezvisko" />
+                                    <TableColumn fx:id="usernameZC" prefWidth="163.0" text="Username" />
+                                    <TableColumn fx:id="hesloZC" prefWidth="106.0" text="Heslo" />
+                                    <TableColumn fx:id="userIDZC" prefWidth="126.0" text="User ID" />
+                                    <TableColumn fx:id="rodicZC" prefWidth="97.0" text="Rodic" />
+                                    <TableColumn fx:id="triedaZC" prefWidth="128.0" text="Trieda" />
+                                    <TableColumn fx:id="ucitelZC" prefWidth="188.0" text="Ucitel" />
+                                </columns>
+                                 <contextMenu>
+                                    <ContextMenu>
+                                      <items>
+                                        <MenuItem mnemonicParsing="false" onAction="#DeleteZiak" text="Delete" />
+                                          <MenuItem mnemonicParsing="false" onAction="#BeforeUpdateZiak" text="Update" />
+                                      </items>
+                                    </ContextMenu>
+                                 </contextMenu>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </content>
+          </Tab>
+          <Tab text="Ucitelia">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.20848056537102475" prefHeight="606.0" prefWidth="1219.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-3.0" AnchorPane.topAnchor="0.0">
+                           <items>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <Label layoutX="25.0" layoutY="41.0" text="Meno:" textFill="#a43a3a" />
+                                    <TextField fx:id="menoUField" layoutX="88.0" layoutY="37.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="137.0" promptText="Meno" />
+                                    <Label layoutX="16.0" layoutY="80.0" text="Priezvisko" textFill="#a43a3a" />
+                                    <TextField fx:id="priezviskoUField" layoutX="88.0" layoutY="75.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="137.0" promptText="Priezvisko" />
+                                    <Label layoutX="16.0" layoutY="118.0" text="Username" textFill="#a43a3a" />
+                                    <TextField fx:id="usernameUField" layoutX="88.0" layoutY="113.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="137.0" promptText="Username" />
+                                    <Label layoutX="27.0" layoutY="159.0" text="Heslo:" textFill="#a43a3a" />
+                                    <PasswordField fx:id="hesloUField" layoutX="88.0" layoutY="154.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="138.0" promptText="Heslo" />
+                                    <Label layoutX="25.0" layoutY="196.0" text="UserID:" textFill="#a43a3a" />
+                                    <TextField fx:id="userIDUField" layoutX="88.0" layoutY="191.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="137.0" promptText="UserID" />
+                                    <Label layoutX="24.0" layoutY="226.0" text="Trieda:" textFill="#a43a3a" />
+                                    <TextField fx:id="triedaUField" layoutX="88.0" layoutY="224.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="137.0" promptText="Trieda" />
+                                    <JFXButton fx:id="addUButton" buttonType="RAISED" layoutX="13.0" layoutY="464.0" onAction="#AddUcitel" prefHeight="25.0" prefWidth="96.0" style="-fx-background-color: #a43a3a;" text="Pridať" textFill="IVORY" />
+                                    <JFXButton fx:id="updateUButton" buttonType="RAISED" layoutX="130.0" layoutY="464.0" onAction="#UpdateUcitel" prefHeight="25.0" prefWidth="96.0" style="-fx-background-color: #a43a3a;" text="Update" textFill="IVORY" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="525.0" prefWidth="576.0">
+                                 <children>
+                                    <TableView fx:id="uciteliaTableView" layoutX="-1.0" prefHeight="618.0" prefWidth="960.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <columns>
+                                          <TableColumn fx:id="idUC" prefWidth="46.0" text="ID" />
+                                          <TableColumn fx:id="menoUC" prefWidth="101.0" text="Meno" />
+                                          <TableColumn fx:id="priezviskoUC" prefWidth="132.0" text="Priezvisko" />
+                                          <TableColumn fx:id="usernameUC" prefWidth="101.0" text="Username" />
+                                          <TableColumn fx:id="hesloUC" prefWidth="132.0" text="Heslo" />
+                                          <TableColumn fx:id="userIDUC" prefWidth="185.0" text="User ID" />
+                                          <TableColumn fx:id="triedaUC" prefWidth="225.0" text="Trieda" />
+                                       </columns>
+                                       <contextMenu>
+                                          <ContextMenu>
+                                             <items>
+                                                <MenuItem mnemonicParsing="false" onAction="#DeleteUcitel" text="Delete" />
+                                                <MenuItem mnemonicParsing="false" onAction="#BeforeUpdateUcitel" text="Update" />
+                                             </items>
+                                          </ContextMenu>
+                                       </contextMenu>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Rodicia">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.20848056537102475" prefHeight="606.0" prefWidth="1219.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-3.0" AnchorPane.topAnchor="0.0">
+                           <items>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <Label layoutX="25.0" layoutY="41.0" text="Meno:" textFill="#a43a3a" />
+                                    <TextField fx:id="menoRField" layoutX="88.0" layoutY="37.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="137.0" promptText="Meno" />
+                                    <Label layoutX="16.0" layoutY="80.0" text="Priezvisko" textFill="#a43a3a" />
+                                    <TextField fx:id="priezviskoRField" layoutX="88.0" layoutY="75.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="137.0" promptText="Priezvisko" />
+                                    <Label layoutX="16.0" layoutY="118.0" text="Username" textFill="#a43a3a" />
+                                    <TextField fx:id="usernameRField" layoutX="88.0" layoutY="113.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="137.0" promptText="Username" />
+                                    <Label layoutX="27.0" layoutY="159.0" text="Heslo:" textFill="#a43a3a" />
+                                    <PasswordField fx:id="hesloRField" layoutX="88.0" layoutY="154.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="138.0" promptText="Heslo" />
+                                    <Label layoutX="25.0" layoutY="196.0" text="UserID:" textFill="#a43a3a" />
+                                    <TextField fx:id="userIDRField" layoutX="88.0" layoutY="191.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="137.0" promptText="UserID" />
+                                    <JFXButton fx:id="addRButton" buttonType="RAISED" layoutX="13.0" layoutY="464.0" onAction="#AddRodic" prefHeight="25.0" prefWidth="96.0" style="-fx-background-color: #a43a3a;" text="Pridať" textFill="IVORY" />
+                                    <JFXButton fx:id="updateRButton" buttonType="RAISED" layoutX="130.0" layoutY="464.0" onAction="#UpdateRodic" prefHeight="25.0" prefWidth="96.0" style="-fx-background-color: #a43a3a;" text="Update" textFill="IVORY" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="525.0" prefWidth="576.0">
+                                 <children>
+                                    <TableView fx:id="rodiciaTableView" layoutX="-1.0" prefHeight="618.0" prefWidth="960.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <columns>
+                                          <TableColumn fx:id="idRC" prefWidth="75.0" text="ID" />
+                                          <TableColumn fx:id="menoRC" prefWidth="95.0" text="Meno" />
+                                          <TableColumn fx:id="priezviskoRC" prefWidth="143.0" text="Priezvisko" />
+                                          <TableColumn fx:id="usernameRC" prefWidth="158.0" text="Username" />
+                                          <TableColumn fx:id="hesloRC" prefWidth="184.0" text="Heslo" />
+                                          <TableColumn fx:id="userIDRC" prefWidth="303.0" text="User ID" />
+                                       </columns>
+                                       <contextMenu>
+                                          <ContextMenu>
+                                             <items>
+                                                <MenuItem mnemonicParsing="false" onAction="#DeleteRodic" text="Delete" />
+                                                <MenuItem mnemonicParsing="false" onAction="#BeforeUpdateRodic" text="Update" />
+                                             </items>
+                                          </ContextMenu>
+                                       </contextMenu>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Triedy">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.20848056537102475" prefHeight="581.0" prefWidth="1171.0">
+                           <items>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="559.0" prefWidth="238.0">
+                                 <children>
+                                    <TextField fx:id="menoTField" layoutX="88.0" layoutY="37.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="137.0" promptText="Meno" />
+                                    <Label layoutX="25.0" layoutY="41.0" text="Meno:" textFill="#a43a3a" />
+                                    <JFXButton fx:id="addTButton" buttonType="RAISED" layoutX="13.0" layoutY="464.0" onAction="#AddTrieda" prefHeight="25.0" prefWidth="96.0" style="-fx-background-color: #a43a3a;" text="Pridať" textFill="IVORY" />
+                                    <JFXButton fx:id="updateTButton" buttonType="RAISED" layoutX="130.0" layoutY="464.0" onAction="#UpdateTrieda" prefHeight="25.0" prefWidth="96.0" style="-fx-background-color: #a43a3a;" text="Update" textFill="IVORY" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="452.0" prefWidth="762.0">
+                                 <children>
+                                    <TableView fx:id="triedyTableView" prefHeight="580.0" prefWidth="923.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
+                                       <columns>
+                                          <TableColumn fx:id="idTC" prefWidth="133.0" text="ID" />
+                                          <TableColumn fx:id="menoTC" prefWidth="362.0" text="Meno" />
+                                       </columns>
+                                       <contextMenu>
+                                          <ContextMenu>
+                                             <items>
+                                                <MenuItem mnemonicParsing="false" onAction="#DeleteTrieda" text="Delete" />
+                                                <MenuItem mnemonicParsing="false" onAction="#BeforeUpdateTrieda" text="Update" />
+                                             </items>
+                                          </ContextMenu>
+                                       </contextMenu>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
